@@ -1,4 +1,4 @@
-const Address = require("../Model/AddressModel");
+const Address = require("../Model/AddressModel.js");
 
 exports.createAddress = async (req, res) => {
   const userId = req.authenticatedUser._id;

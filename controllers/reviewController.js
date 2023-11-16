@@ -1,8 +1,8 @@
-const Review = require("../Model/ReviewModel");
+const Review = require("../Model/ReviewModel.js");
 
 const getProductReviews = async (req, res) => {
   const { productId } = req.params;
-  const resultsPerPage = parseInt(req.query.resultsPerPage);
+  const resultsPerPage = parseInt(req.query.resultPerPage);
   const currentPage = parseInt(req.query.currentPage);
   try {
     const totalNumberOfItems = await Review.countDocuments({
@@ -14,7 +14,7 @@ const getProductReviews = async (req, res) => {
       .sort({ rating: -1 });
     return res
       .status(200)
-      .json({ reviews, resultsPerPage, totalNumberOfItems });
+      .json({ reviews,currentPage, resultsPerPage, totalNumberOfItems });
   } catch (error) {
     return res.status(500).json({ message: "something went wrong" });
   }

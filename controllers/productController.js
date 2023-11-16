@@ -1,5 +1,5 @@
-const Product = require("../Model/ProductModel");
-const { ApiFeatures } = require("../utils/apiFeature");
+const Product = require("../Model/ProductModel.js");
+const { ApiFeatures } = require("../utils/apiFeature.js");
 
 const getAllProducts = async (req, res, next) => {
   const resultPerPage = parseInt(req.query.resultPerPage);

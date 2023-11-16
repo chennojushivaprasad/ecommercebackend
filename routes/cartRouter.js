@@ -7,8 +7,8 @@ const {
   deleteCartItem,
   updateCartItem,
   resetCart
-} = require("../controllers/cartController");
-const { isAuthenticatedUser } = require("../middleware/auth");
+} = require("../controllers/cartController.js");
+const { isAuthenticatedUser } = require("../middleware/auth.js");
 // const { authorizedRole } = require("../utils/authorizedRole");
 
 const cartRouter = express();
