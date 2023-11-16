@@ -1,6 +1,6 @@
-const Order = require("../Model/OrderModel.js");
-const Product = require("../Model/ProductModel.js");
-const { ApiFeatures } = require("../utils/apiFeature.js");
+const Order = require("../Model/OrderModel");
+const Product = require("../Model/ProductModel");
+const { ApiFeatures } = require("../utils/apiFeature");
 
 const newOrder = async (req, res, next) => {
   const {
@@ -27,7 +27,7 @@ const newOrder = async (req, res, next) => {
     const order = await newOrder.save();
     return res.status(201).json({ successStatus: true, order });
   } catch (error) {
-    
+    console.log(error);
     return res.status(500).json({ message: "something went wrong" });
   }
 };

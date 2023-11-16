@@ -1,13 +1,11 @@
-
+const app = require("./app");
 const dotenv = require("dotenv");
 
-const app = require("./app.js");
+const connectDatabase = require("./config/database");
 
-dotenv.config({ path: __dirname + "/config/config.env" });
+dotenv.config({ path: "ecommercebackend/config/config.env" });
 
-const connectDatabase = require("./config/database.js");
-
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT;
 
 connectDatabase(process.env.MONGODB_URL);
 

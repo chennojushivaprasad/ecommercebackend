@@ -1,6 +1,6 @@
 const express = require("express");
-const {getMyAddressList,getAddress,createAddress,updateAddress,deleteAddress} = require("../controllers/AddressController.js");
-const { isAuthenticatedUser } = require("../middleware/auth.js");
+const {getMyAddressList,getAddress,createAddress,updateAddress,deleteAddress} = require("../controllers/AddressController");
+const { isAuthenticatedUser } = require("../middleware/auth");
 // const { authorizedRole } = require("../utils/authorizedRole");
 
 const addressRouter = express();

@@ -2,7 +2,7 @@ const razorpay = require("razorpay");
 const crypto = require("crypto")
 
 const dotenv = require("dotenv");
-dotenv.config({ path: __dirname + "/config/config.env" });
+dotenv.config({ path: "ecommercebackend/config/config.env" });
 
 const instance = new razorpay({
   key_id: process.env.RAZORPAY_KEY,

@@ -4,8 +4,8 @@ const {
   checkWishlist,
   addToWishlist,
   removeFromWishList,
-} = require("../controllers/wishlistController.js");
-const { isAuthenticatedUser } = require("../middleware/auth.js");
+} = require("../controllers/wishlistController");
+const { isAuthenticatedUser } = require("../middleware/auth");
 
 const wishlistRouter = express();
 

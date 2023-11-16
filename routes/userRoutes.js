@@ -5,8 +5,8 @@ const {
   logout,
   getUser,
   updateUser,
-} = require("../controllers/userController.js");
-const { isAuthenticatedUser } = require("../middleware/auth.js");
+} = require("../controllers/userController");
+const { isAuthenticatedUser } = require("../middleware/auth");
 
 const userRouter = express();
 
