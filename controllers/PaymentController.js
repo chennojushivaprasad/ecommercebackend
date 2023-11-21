@@ -1,36 +1,11 @@
 const razorpay = require("razorpay");
 const crypto = require("crypto");
-
 const dotenv = require("dotenv");
-const path = require("path");
-const fs = require("fs");
 
-function findProjectRoot(startDir) {
-  let currentDir = startDir;
+const { findProjectRoot } = require("../utils/projectRoot");
 
-  while (true) {
-    const packageJsonPath = path.join(currentDir, "package.json");
-
-    if (fs.existsSync(packageJsonPath)) {
-      return currentDir;
-    }
-
-    const parentDir = path.dirname(currentDir);
-
-    // Break if we have reached the root directory
-    if (currentDir === parentDir) {
-      break;
-    }
-
-    currentDir = parentDir;
-  }
-
-  // If no project root is found, return null or handle it accordingly
-  return null;
-}
-
-const projectRoot = findProjectRoot(__dirname);
-dotenv.config({ path: projectRoot + "/config/config.env" });
+const projectRoo = findProjectRoot(__dirname);
+dotenv.config({ path: projectRoo });
 
 const instance = new razorpay({
   key_id: process.env.RAZORPAY_KEY,

@@ -15,7 +15,7 @@ const reviewRouter = require("./routes/reviewRouter.js");
 
 app.use(
   cors({
-    origin: "http://localhost:3004",
+    origin: "https://bharatbhazaar.netlify.app",
   })
 );
 
