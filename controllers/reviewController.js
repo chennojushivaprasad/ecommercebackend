@@ -1,4 +1,4 @@
-const Review = require("../Model/ReviewModel");
+const Review = require("../Model/ReviewModel.js");
 
 const getProductReviews = async (req, res) => {
   const { productId } = req.params;

@@ -4,8 +4,8 @@ const {
   addReview,
   updateReview,
   deleteReview
-} = require("../controllers/reviewController");
-const { isAuthenticatedUser } = require("../middleware/auth");
+} = require("../controllers/reviewController.js");
+const { isAuthenticatedUser } = require("../middleware/auth.js");
 
 const reviewRouter = express();
 

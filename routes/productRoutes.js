@@ -9,9 +9,9 @@ const {
   deleteProduct,
   deleteProductReview,
   createProductReview,
-} = require("../controllers/productController");
-const { isAuthenticatedUser } = require("../middleware/auth");
-const { authorizedRole } = require("../utils/authorizedRole");
+} = require("../controllers/productController.js");
+const { isAuthenticatedUser } = require("../middleware/auth.js");
+const { authorizedRole } = require("../utils/authorizedRole.js");
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage, dest: "uploads/" });

@@ -1,9 +1,9 @@
-const app = require("./app");
+const app = require("./app.js");
 const dotenv = require("dotenv");
 
-const connectDatabase = require("./config/database");
+const connectDatabase = require("./config/database.js");
 
-dotenv.config({ path: "ecommercebackend/config/config.env" });
+dotenv.config({ path: __dirname + "/config/config.env" });
 
 const PORT = process.env.PORT;
 

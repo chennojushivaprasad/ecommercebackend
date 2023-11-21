@@ -1,7 +1,7 @@
-const User = require("../Model/UserModel");
+const User = require("../Model/UserModel.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { sendToken, getJWTToken } = require("../utils/jwtToken");
+const { sendToken, getJWTToken } = require("../utils/jwtToken.js");
 
 exports.register = async (req, res, next) => {
   const { fullname, email, password, avatar } = req.body;

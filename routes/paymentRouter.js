@@ -1,6 +1,6 @@
 const express = require("express");
-const {createOrder,verifyPayment} = require("../controllers/PaymentController");
-const { isAuthenticatedUser } = require("../middleware/auth");
+const {createOrder,verifyPayment} = require("../controllers/PaymentController.js");
+const { isAuthenticatedUser } = require("../middleware/auth.js");
 // const { authorizedRole } = require("../utils/authorizedRole");
 
 const paymentRouter = express();

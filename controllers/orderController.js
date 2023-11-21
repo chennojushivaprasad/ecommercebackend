@@ -1,6 +1,6 @@
-const Order = require("../Model/OrderModel");
-const Product = require("../Model/ProductModel");
-const { ApiFeatures } = require("../utils/apiFeature");
+const Order = require("../Model/OrderModel.js");
+const Product = require("../Model/ProductModel.js");
+const { ApiFeatures } = require("../utils/apiFeature.js");
 
 const newOrder = async (req, res, next) => {
   const {

@@ -2,9 +2,10 @@
   "name": "ecommerce",
   "version": "1.0.0",
   "main": "ecommercebackend/server.js",
+ 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ecommercebackend/server.js",
+    "start": "node server.js",
     "dev": "node server.js"
   },
   "author": "",

@@ -3,19 +3,19 @@ const cors = require("cors");
 
 const app = express();
 
-const productRouter = require("./routes/productRoutes");
-const userRouter = require("./routes/userRoutes");
-const cartRouter = require("./routes/cartRouter");
-const wishlistRouter = require("./routes/wishlistRouter");
-const addressRouter = require("./routes/addressRouter");
-const paymentRouter = require("./routes/paymentRouter");
-const orderRouter = require("./routes/orderRouter");
-const reviewRouter = require("./routes/reviewRouter");
+const productRouter = require("./routes/productRoutes.js");
+const userRouter = require("./routes/userRoutes.js");
+const cartRouter = require("./routes/cartRouter.js");
+const wishlistRouter = require("./routes/wishlistRouter.js");
+const addressRouter = require("./routes/addressRouter.js");
+const paymentRouter = require("./routes/paymentRouter.js");
+const orderRouter = require("./routes/orderRouter.js");
+const reviewRouter = require("./routes/reviewRouter.js");
 
 
 app.use(
   cors({
-    origin: "https://bharatbhazaar.netlify.app",
+    origin: "http://localhost:3004",
   })
 );
 
