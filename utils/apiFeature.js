@@ -35,7 +35,7 @@ class ApiFeatures {
   filter() {
     let queryCopy = { ...this.queryStr };
 
-    const removeFields = ["keyword","price", "page","resultPerPage", "limit"];
+    const removeFields = ["keyword", "price", "page", "resultPerPage", "limit"];
 
     removeFields.forEach((key) => delete queryCopy[key]);
 
@@ -52,7 +52,9 @@ class ApiFeatures {
   }
 
   sort(sortValue) {
-    this.query.sort(sortValue);
+    if (sortValue?.price) {
+      this.query.sort(sortValue);
+    }
     return this;
   }
 }
