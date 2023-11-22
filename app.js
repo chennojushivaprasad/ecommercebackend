@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const dotenv = require('dotenv')
 const app = express();
 
 const productRouter = require("./routes/productRoutes.js");
@@ -11,11 +11,14 @@ const addressRouter = require("./routes/addressRouter.js");
 const paymentRouter = require("./routes/paymentRouter.js");
 const orderRouter = require("./routes/orderRouter.js");
 const reviewRouter = require("./routes/reviewRouter.js");
+const { findProjectRoot } = require("./utils/projectRoot.js");
 
+
+dotenv.config({path:findProjectRoot(__dirname)})
 
 app.use(
   cors({
-    origin: "https://bharatbhazaar.netlify.app",
+    origin: process.env.BASE_URL,
   })
 );
 

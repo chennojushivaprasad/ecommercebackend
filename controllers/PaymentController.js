@@ -4,8 +4,8 @@ const dotenv = require("dotenv");
 
 const { findProjectRoot } = require("../utils/projectRoot");
 
-const projectRoo = findProjectRoot(__dirname);
-dotenv.config({ path: projectRoo });
+const projectRoot = findProjectRoot(__dirname);
+dotenv.config({ path: projectRoot });
 
 const instance = new razorpay({
   key_id: process.env.RAZORPAY_KEY,
