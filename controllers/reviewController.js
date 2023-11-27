@@ -20,41 +20,12 @@ const getProductReviews = async (req, res) => {
   }
 };
 
-// const addReview = async (req, res) => {
-//   try {
-//     const { productId } = req.params;
-//     const userId = req?.authenticatedUser?._id;
-
-//     const reviewExists = await Review.findOne({ userId, productId });
-
-//     if (reviewExists) {
-//       return res
-//         .status(400)
-//         .json({ error: "Review already exists for this user and product" });
-//     }
-
-//     const review = new Review({
-//       productId,
-//       userId,
-//       ...req.body,
-//     });
-
-//     const savedReview = await review.save();
-
-//     return res
-//       .status(201)
-//       .json({ review: savedReview, message: "Review added successfully" });
-//   } catch (error) {
-//     console.error("Error adding review:", error);
-//     return res.status(500).json({ error: "Failed to add review" });
-//   }
-// };
-
 const addReview = async (req, res) => {
   const {productId} = req.params;
   const userId = req?.authenticatedUser?._id;
   const { rating, comment, fullname } = req.body;
 
+  let isExistingReview = false
   try {
     let existingReview = await Review.findOne({ userId, productId });
    
@@ -62,6 +33,7 @@ const addReview = async (req, res) => {
       existingReview.rating = rating;
       existingReview.comment = comment;
       existingReview.fullname = fullname;
+      isExistingReview = true
       await existingReview.save();
     } else {
       existingReview = new Review({
@@ -74,27 +46,12 @@ const addReview = async (req, res) => {
       await existingReview.save();
     }
     
-    res.status(200).json({ review: existingReview });
+    res.status(200).json({ review: existingReview ,isExistingReview});
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Error creating or updating review" });
   }
 };
-
-// const updateReview = async (req, res) => {
-//   const { reviewId } = req.params;
-
-//   try {
-//     const data = await Review.findByIdAndUpdate(
-//       reviewId,
-//       { ...req.body },
-//       { new: true }
-//     );
-//     return res.status(200).json({ review: data, message: "updated review" });
-//   } catch (error) {
-//     return res.status(500).json({ message: "failed to update review" });
-//   }
-// };
 
 const deleteReview = async (req, res) => {
   const { reviewId } = req.params;
